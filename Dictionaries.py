@@ -9,11 +9,11 @@ print(person)
 
 #Dictionaries are used to perform a count of a number of 
 #occurencies that occur in a list. For Example
-Names = dict()
+Names = dict()#Creating a dictio...
 list = ['Akashi', 'favour','jean', 'Delia','jean','favour','Akashi','jean']
 for name in list:
-    if name not in Names:
+    if name not in Names:#Checking if a key already exits in the Dictionary
         Names[name] = 1
     else:
-        Names[name] += 1
+        Names[name] += 1#increments the value of the key by 1
 print(Names)            
