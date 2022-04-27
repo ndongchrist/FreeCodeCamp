@@ -5,3 +5,10 @@ FileHandler = open('test.txt', "r")
 #the file 
 inp = FileHandler.read()
 print(inp)
+
+#We can ru through the file too using a for loop
+#Example: For counting the number of lines in a file
+count =  0 #we initialize a variable count for counting lines
+for line in inp:
+    count += 1
+print(count)    
