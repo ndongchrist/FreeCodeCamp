@@ -3,7 +3,11 @@ from logging import FileHandler
 
 
 Filename = input('Type your File name: ')
-FileHandler = open(Filename,'r')
+try:
+    FileHandler = open(Filename,'r')
+except:
+    print(f'File {Filename} cannot be opened')   
+    quit() 
 fhand1 = FileHandler.read()
 count = 0
 for line in fhand1:
