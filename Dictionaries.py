@@ -1,3 +1,6 @@
+from tabnanny import check
+
+
 person = dict()
 person['name'] = 'Akashi'
 person['age'] = 18
@@ -16,4 +19,11 @@ for name in list:
         Names[name] = 1
     else:
         Names[name] += 1#increments the value of the key by 1
-print(Names)            
+print(Names)       
+
+#The get() method checks if a key:value already exits and if not it creats a 
+#default pair
+verify = Names.get('john', 4)
+print(verify)
+print(Names.keys())#Gives you all the keys
+print(Names.values())#gives all the Values
