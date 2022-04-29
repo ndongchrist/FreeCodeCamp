@@ -1,3 +1,4 @@
+#My first WebBrowser
 import socket
 mySock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 mySock.connect(('data.pr4e.org', 80)) #Creating a connection using a Socket
@@ -21,5 +22,5 @@ while True:
         break
     #else we decode the data and print it
     print(data.decode())
-    print(data)
+    print(data)#just for testing
 mySock.close()#Close the connection
