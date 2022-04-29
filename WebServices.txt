@@ -1,0 +1,9 @@
+   With the http request/response well understood there was a neutral move
+ towards exchanging data between programs 
+   We needed to come up with an agreed way to represent data going 
+ between applications across a network
+   They are commonly two formats: JSON and XML
+    ********XML(Extensible Markup Language)*******
+   -Tags
+   -Attributs
+   -Serialize/Deserialize
