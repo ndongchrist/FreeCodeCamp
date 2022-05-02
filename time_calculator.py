@@ -6,14 +6,18 @@ def  hour12(hour, moment):
             moment = 'AM'
         else:
             moment = 'PM'
-        count += 1    
-    return moment, hour, count/2
+        count += 1  
+    count /= 2  
+    if count <= 0.5:
+        count = 0
+
+    return moment, hour, count
 
 
-def day_count(day, days):
+def day_count(day, days, n):
     for i in range(len(days)):
         if day == days[i]:
-            day = days[i+1] 
+            day = days[i+n] 
             break
         elif i > len(days):
             i = 0    
@@ -51,9 +55,9 @@ def add_time(start, duration, day = ""):
         minute = add_zero(abs(minute1 - minute2))
         hour += 1
     var = hour12(hour, moment)
-    day = day_count(day, days)  
+    day = day_count(day, days, var[2])  
     print(f'{add_zero(var[1])}:{minute} {var[0]}')
     if day != None:
         print(f"{day} ({var[2]} day(s) later)") 
 
-add_time("6:30 PM", "205:12")
+add_time("11:30 AM", "2:32", "Monday")
