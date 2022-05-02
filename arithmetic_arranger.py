@@ -16,9 +16,13 @@ def placer(element, answer = None):#for arranging the operations in vertical ord
     #I create a new list by spliting the element
     new_e = element.split(" ")
 
-    print(f" {counter(new_e[0])}")
-    print(f"{new_e[1]}{counter(new_e[2])}")
-    print('-'*7)
+    for i in range (3):
+        print('\t') 
+        for j in range(4):
+            print(f" {counter(new_e[0])}")
+            print(f"{new_e[1]}{counter(new_e[2])}")
+            print('-'*7)
+            
 
 
 def arithmetic_arranger(operation, answer = None):#Creating a list() for storing operations
