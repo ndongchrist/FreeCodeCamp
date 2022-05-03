@@ -11,7 +11,7 @@ def  hour12(hour, moment):
     if count <= 0.5:
         count = 0
 
-    return moment, hour, count
+    return moment, hour, int(count)
 
 
 def day_count(day, days, n):
@@ -60,4 +60,4 @@ def add_time(start, duration, day = ""):
     if day != None:
         print(f"{day} ({var[2]} day(s) later)") 
 
-add_time("11:30 AM", "2:32", "Monday")
+add_time("11:43 PM", "24:20", "Tuesday")
