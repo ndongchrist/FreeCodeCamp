@@ -1,4 +1,4 @@
-from xml.etree.ElementPath import get_parent_map
+import random
 
 
 class Hat:
@@ -21,9 +21,29 @@ class Hat:
         }
         self.content = []
 
-        if dict.keys == 'red':
-            for i in dict.values():
-                self.content.append('red')
+        for key in dict.keys():
+            if key == 'red':
+                for i in range(dict[key]):
+                    self.content.append('red')
+            if key == 'green':
+                for i in range(dict[key]):
+                    self.content.append('green')
+            if key == 'yellow':
+                for i in range(dict[key]):
+                    self.content.append('yellow')
+            if key == 'black':
+                for i in range(dict[key]):
+                    self.content.append('black')
+            if key == 'orange':
+                for i in range(dict[key]):
+                    self.content.append('orange')
+            if key == 'blue':
+                for i in range(dict[key]):
+                    self.content.append('blue')
+            if key == 'pink':
+                for i in range(dict[key]):
+                    self.content.append('pink')
+                     
 
-h1 = Hat(red=5)        
+h1 = Hat(yellow=3, blue=2, green=6)        
 print(h1.content)
