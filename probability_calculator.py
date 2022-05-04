@@ -61,7 +61,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     sum = 0
     expected_counts = 0
     removedball = hat.draw(num_balls_drawn)
-    count = 0
+    
     for  i in range(num_experiments):
         for ballcolor,ballnum in expected_balls.items():
             for elmt in range(ballnum):
@@ -78,9 +78,4 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     return probability
     
 
-h1 = Hat(red=4, blue=2, green=6)        
-probability = experiment(h1,
-                  expected_balls={"red":2,"green":1},
-                  num_balls_drawn=5,
-                  num_experiments=2000)
-print(probability)
+
