@@ -56,7 +56,31 @@ class Hat:
             self.content.clear()
         return removed
 
-h1 = Hat(yellow=1, blue=2, green=6)        
-print(h1.content)
-print(h1.draw(9))
-print(h1.content)
+def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+    hat = Hat()
+    sum = 0
+    expected_counts = 0
+    removedball = hat.draw(num_balls_drawn)
+    count = 0
+    for  i in range(num_experiments):
+        for ballcolor,ballnum in expected_balls.items():
+            for elmt in range(ballnum):
+                if ballcolor in removedball:
+                    removedball.remove(ballcolor)
+                    expected_balls[ballcolor] -= 1
+        
+        for value in expected_balls.values():
+            sum += value
+            if sum == 0:
+                expected_counts += 1
+
+    probability = expected_counts / num_experiments
+    return probability
+    
+
+h1 = Hat(red=4, blue=2, green=6)        
+probability = experiment(h1,
+                  expected_balls={"red":2,"green":1},
+                  num_balls_drawn=5,
+                  num_experiments=2000)
+print(probability)
