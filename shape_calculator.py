@@ -65,7 +65,9 @@ class Square(Rectangle):#inherits the rectangle class
 
 
 
-r1 = Rectangle()
-r1.set_width = 20
-r1.set_height = 5
+r1 = Rectangle(20, 6)
 r1.get_picture()
+s1 = Square(5)
+s1.set_width = 20
+s1.set_height = 5
+s1.get_picture()
