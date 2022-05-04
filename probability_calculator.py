@@ -1,4 +1,5 @@
 import random
+from select import select
 
 
 class Hat:
@@ -43,7 +44,19 @@ class Hat:
             if key == 'pink':
                 for i in range(dict[key]):
                     self.content.append('pink')
-                     
+    def draw(self, numofBalls):
+        removed = []
+        if numofBalls < len(self.content):
+            for i in range(numofBalls):
+                item = self.content[random.randint(0, len(self.content)-1)]
+                self.content.remove(item)
+                removed.append(item)
+        elif numofBalls >= len(self.content):
+            removed = removed + self.content 
+            self.content.clear()
+        return removed
 
-h1 = Hat(yellow=3, blue=2, green=6)        
+h1 = Hat(yellow=1, blue=2, green=6)        
+print(h1.content)
+print(h1.draw(9))
 print(h1.content)
