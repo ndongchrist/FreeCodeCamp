@@ -15,13 +15,10 @@ def counter(n): #counts the number of spaces for arranging the spaces between
 def placer(element, answer = None):#for arranging the operations in vertical order
     #I create a new list by spliting the element
     new_e = element.split(" ")
-
-    for i in range (3):
-        print('\t') 
-        for j in range(4):
-            print(f" {counter(new_e[0])}")
-            print(f"{new_e[1]}{counter(new_e[2])}")
-            print('-'*7)
+    
+    print(f" {counter(new_e[0])}")
+    print(f"{new_e[1]}{counter(new_e[2])}")
+    print('-'*7)
             
 
 
