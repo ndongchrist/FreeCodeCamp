@@ -1,6 +1,5 @@
 import random
 
-
 def Computer_choice():
     list = ['r','p','s']
     a = random.randrange(0,2)
@@ -23,9 +22,12 @@ def compare(ply, Cpt):
         return "Player 1 wins"
 
 count = 0
-p = input("Enter an Option: r:rock, p:paper, s:scissor -->")
-while count != 0:
+while count != 3:
+    count += 1
+    p = input("Enter an Option: r:rock, p:paper, s:scissor -->")
+    print(f"you: {p}")
     comp = Computer_choice()
+    print(f'computer: {comp}')
     a = compare(p, comp)
     print(a)
     
