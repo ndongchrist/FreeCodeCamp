@@ -1,3 +1,4 @@
+from filecmp import cmp
 import random
 list = ['1','2','3','4','5','6','7','8','9']
 play = True
@@ -12,7 +13,7 @@ def display():
 
 def printing(n, ply):
     if list[n-1] == 'X' or 'O':
-        print("Cell already occupied")
+        return "Error"
     else:
         list[n-1] = ply
 
@@ -36,10 +37,9 @@ def winner():
     else:
         pass
 
-
-
     
 def random_choice():
+    n = len(list)
     while list[n-1] == 'X' or 'O':
         n = random.randrange(0,8)
     return n
@@ -51,10 +51,15 @@ if Player1 == 'X':
 else:
     comp = 'X'  
 display()
-
-choice = input("Select a number: ")
-printing(choice, Player1)
-comp_choice = random_choice()
-printing(comp_choice, comp)
-display()
-winner()
+count = 0
+while count != 8:
+    choice = int(input("Select a number: "))
+    while printing(choice, Player1) == 'Error':
+        printing(choice, Player1)
+    display()
+    comp_choice = random_choice()
+    while printing(comp_choice, comp) == 'Error':
+        printing(comp_choice, comp)
+    display()
+    winner()
+    count += 1
