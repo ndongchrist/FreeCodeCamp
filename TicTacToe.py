@@ -1,5 +1,5 @@
-from filecmp import cmp
 import random
+
 list = ['1','2','3','4','5','6','7','8','9']
 play = True
 
@@ -12,10 +12,17 @@ def display():
     print(f" {list[6]} | {list[7]} | {list[8]} ")
 
 def printing(n, ply):
-    if list[n-1] == 'X' or 'O':
-        return "Error"
-    else:
-        list[n-1] = ply
+        if ply == 'O':
+            if list[n-1] != 'O' or 'X':
+                list[n-1] = 'O'
+            else:
+                pass    
+        else:
+            if list[n-1] != 'O' or 'X':
+                list[n-1] = 'X'
+            else:
+                pass
+
 
 def winner():
     if list[0] == list[1] == list[2]:
@@ -39,10 +46,17 @@ def winner():
 
     
 def random_choice():
+    a = 0
     n = len(list)
-    while list[n-1] == 'X' or 'O':
-        n = random.randrange(0,8)
-    return n
+    for i in range(0, n-1):
+        if list[i] == 'X' or 'O':
+            
+
+    
+
+    
+
+
 
 comp = ''
 Player1 = input("Select either 'X' or 'O': ")
@@ -52,13 +66,18 @@ else:
     comp = 'X'  
 display()
 count = 0
-while count != 8:
+n = len(list)-1
+
+while count != n:
     choice = int(input("Select a number: "))
-    while printing(choice, Player1) == 'Error':
+    while list[choice - 1] != Player1:
+        choice = int(input("Select a number: "))
         printing(choice, Player1)
     display()
+    print('computer is choosing')
     comp_choice = random_choice()
-    while printing(comp_choice, comp) == 'Error':
+    while list[comp_choice-1] != comp:
+        comp_choice = random_choice()
         printing(comp_choice, comp)
     display()
     winner()
